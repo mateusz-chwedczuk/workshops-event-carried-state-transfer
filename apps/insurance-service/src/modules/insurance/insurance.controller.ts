@@ -12,6 +12,9 @@ export class InsuranceController {
   @EventPattern(UserUpdatedEvent.name)
   async handleEvent(@Payload() data: UserUpdatedEvent) {
     // Fetch new user data to simple user table
+    // TODO
+
+    // Calculate new insurance
     await this.calculateInsuranceService.execute(data.userId);
     console.log(
       `Calculated insurance for user ${data.userId} via event handler`
