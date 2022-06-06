@@ -14,8 +14,6 @@ export class CalculateInsuranceService {
     const user = await this.simpleUserService.get(userId);
 
     console.log(`City of user ${userId} is ${user.city}`);
-    console.log(`City of user ${userId} is ${user.city}`);
     return;
-    // some magic
   }
 }

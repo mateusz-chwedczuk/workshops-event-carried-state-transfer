@@ -13,11 +13,12 @@ export class UpdateUserService {
 
   async execute(id: string, dto: UpdateUserDto) {
     const index = this.database.users.findIndex((u) => u.id === id);
+    console.log(`Old city of user ${id} is ${this.database.users[index].city}`);
     this.database.users[index].city = dto.city;
-    console.log(`Updated city of user ${id}`);
+    console.log(`Updated city of user ${id} to ${dto.city}`);
     this.client.emit(
       UserUpdatedEvent.name,
-      new UserUpdatedEvent({ userId: id, city: dto.city })
+      new UserUpdatedEvent({ userId: id })
     );
   }
 }
