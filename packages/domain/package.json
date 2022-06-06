@@ -1,0 +1,15 @@
+{
+  "name": "@packages/domain",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@packages/tsconfig": "*",
+    "typescript": "^4.7.3"
+  },
+  "scripts": {
+    "dev": "tsc -p tsconfig.build.json -w --preserveWatchOutput"
+  },
+  "private": true
+}
